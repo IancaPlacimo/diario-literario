@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .form-group {
+      @apply w-full border border-2 border-roxo-700;
+    }
+
+    .text-danger {
+        @apply mt-1 text-red-700;
+      }
+
+      .button-cadastro{
+        @apply px-0 text-center py-2 bg-roxo-700 text-white w-2/4 font-semibold  md:text-xs sm:text-xs lg:text-xl xl:text-xl hover:bg-roxo-600 focus:ring-2 focus:ring-offset-roxo-600;
+      }
+  }

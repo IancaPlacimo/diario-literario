@@ -1,0 +1,47 @@
+<div class="bg-fundo flex justify-start items-center h-screen flex-col pt-16 space-y-16" >
+    <h1 class="font-bold text-roxo-700">Meu Diário Literário</h1>
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96 h-1/2">
+        <h2 class="text-2xl font-bold text-center mb-6 text-roxo-600">Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4">
+
+            <div>
+                <label for="email" class="block text-sm text-roxo-700 font-bold">Email</label>
+                <input id="email" formControlName="email" type="email"
+                    class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:bg-roxo-100 focus:border-roxo-200"
+                    [ngClass]="{'border-red-500': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}" />
+                <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                    class="text-red-500 text-xs mt-1">ng
+                    O email é obrigatório e deve ser válido.
+                </div>
+            </div>
+
+
+            <div>
+                <label for="password" class="block text-sm text-roxo-700 font-bold">Senha</label>
+                <input id="password" formControlName="password" type="password"
+                    class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:bg-roxo-100 focus:border-roxo-200"
+                    [ngClass]="{'border-red-500': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}" />
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                    class="text-red-500 text-xs mt-1">
+                    A senha é obrigatória e deve ter no mínimo 6 caracteres.
+                </div>
+            </div>
+
+
+            <div>
+                <button type="submit" [disabled]="loginForm.invalid"
+                    class="w-full py-2 bg-roxo-600 text-white rounded-md shadow hover:bg-roxo-600 focus:ring-2 focus:ring-indigo-400 disabled:bg-roxo-200">
+                    Entrar
+                </button>
+            </div>
+        </form>
+        <div class="w-full flex flex-row justify-between p-4 mt-4">
+            <button (click)="cadastro()" class="font-semibold text-roxo-700">Novo por aqui? <br>
+                Registre-se
+            </button>
+            <button class="font-semibold text-roxo-700">
+                Esqueceu a senha?
+            </button>
+        </div>
+    </div>
+</div>
