@@ -10,7 +10,7 @@
                     class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:bg-roxo-100 focus:border-roxo-200"
                     [ngClass]="{'border-red-500': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}" />
                 <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
-                    class="text-red-500 text-xs mt-1">ng
+                    class="text-red-500 text-xs mt-1">
                     O email é obrigatório e deve ser válido.
                 </div>
             </div>
